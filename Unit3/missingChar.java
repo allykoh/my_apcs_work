@@ -10,9 +10,9 @@ public static String missingChar(String str, int n){
 public static void testmissingChar(String str, int n, String expected){
 	String result = missingChar(str, n);
 	  if (result.equals(expected)) {
-            System.out.println("PASS: missingChar(" + str + ", " + n + ") → " + str + n);
+            System.out.println("PASS: missingChar(" + str + ", " + n + ") -> " + str + n);
         } else {
-            System.out.println("FAIL: missingChar(" + str + ", " + n + ") → " + str + n
+            System.out.println("FAIL: missingChar(" + str + ", " + n + ") -> " + str + n
                                + " (expected " + expected + ")");
         }
     }
