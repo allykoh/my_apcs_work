@@ -7,12 +7,20 @@ public class Reverse {
 		}
 		return flip; 
 	}
+	public static void testReverse(String str, String expected){
+		String result = reverse(str); 
+		
+		if(result.equals(expected)){
+			System.out.println("PASS: " +str+ " becomes " + result); 
+		}else{	
+			System.out.println("FAIL: " +str+ " becomes " + result + " not " + expected); 
+		} 
+	}
 	
 	public static void main(String[] args) {
-		System.out.println(reverse("bad"));
-		System.out.println(reverse("Hello, world!"));
-		System.out.println(reverse("tacocat"));
-		System.out.println(reverse("What's up?"));
+		testReverse("bad", "dab");
+		testReverse("Hello, world!", "!dlrow ,olleH");
+		testReverse("tacocat", "tacocat");
 	}
 }
 

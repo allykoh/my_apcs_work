@@ -10,12 +10,19 @@ public class Factorial {
 		return value; 
 	}
 	
+	public static void testFactorial(int n, int expected){
+		int actual = factorial(n); 
+		if(actual == expected){
+			System.out.println("PASS: the factorial of " + n + " is " + actual); 
+		}else {
+			System.out.println("FAIL: expected value of " + n + " is " + expected + ", the actual value is " + actual); 
+	}
+}
 	public static void main (String[] args) {
-		System.out.println(factorial(0));
-		System.out.println(factorial(1));
-		System.out.println(factorial(2));
-		System.out.println(factorial(3));
-		System.out.println(factorial(4));
+		testFactorial(0, 1);
+		testFactorial(1, 1);
+		testFactorial(2, 2);
+		testFactorial(3, 6);
 	}
 }
 

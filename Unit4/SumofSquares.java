@@ -9,11 +9,23 @@ public class SumofSquares{
 		value += i*i; 
 	}
 	return value; 
+} 
+public static void testSum(int n, int expected){
+	int actual = sumofSquares(n); 
+	
+	if(actual == expected){
+		System.out.println("PASS: " + n + " becomes " + expected); 
+	}else{
+		System.out.println("FAIL: " + n + " becomes " + actual + " not " + expected); 
+	}
+	
 }
+
+
 	public static void main(String[] args){
-		System.out.println(sumofSquares(1)); 
-		System.out.println(sumofSquares(2));
-		System.out.println(sumofSquares(3)); 
+		testSum(1, 1); 
+		testSum(2, 5);
+		testSum(3, 14); 
 	}
 	
 }

@@ -10,10 +10,20 @@ public class CountOccurences {
 		}
 		return n; 
 	}
+	public static void testOccurences(String full, String str, int expected){
+		int actual = countOccurences(full, str); 
+		
+		if(actual == expected){
+			System.out.println("PASS: (" + str + ") in (" + full + ") occurs " + actual + " times"); 
+		}else{
+			System.out.println("FAIL: got " + expected + "correct: " + actual); 
+		}
+	}
 	
 	public static void main (String[] args) {
-		System.out.println(countOccurences("Mississippi", "iss")); 
-		System.out.println(countOccurences("bananana", "na")); 
+		testOccurences("Mississippi", "iss", 2); 
+		testOccurences("bananana", "na", 3); 
+		testOccurences("Falalala", "la", 3); 
 	}
 }
 
