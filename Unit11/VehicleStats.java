@@ -32,7 +32,11 @@ public class VehicleStats{
 		
 		System.out.println(totalWheels(vehicles)); 
 		
-		System.out.println(humanPowered(vehicles)); 
+		ArrayList<Vehicle> result = humanPowered(vehicles); 
+	
+		for(Vehicle a : result){
+			System.out.println(a.name()); 
+		}
 		
 	}
 }
