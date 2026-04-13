@@ -1,16 +1,17 @@
 import processing.core.*;
-//import java.util.*; 
+import java.util.*; 
 //import processing.core.PApplet;
 
 
 public class Brain extends PApplet {
 
-    int screen = 0; 
-    Project project; 
-    float bW = 820; 
-    float bH = 200;  
-    float bX; 
-    float bY; 
+
+    private int screen = 0; 
+    private float bW = 820; 
+    private float bH = 200;  
+    private float bX; 
+    private float bY; 
+    ArrayList<Screens> screens = new ArrayList<Screens>(); 
 
     public static void main(String[] args){
         PApplet.main("Brain");
@@ -24,37 +25,43 @@ public class Brain extends PApplet {
         textAlign(CENTER, CENTER);
 		bX = (float)(width/3.7);
 		bY = (float)(height/2.4);
- 
-
-    project = new Project(this);
+		
+		screens.add(new Screen1(this, this));  
+		screens.add(new LeftScreen(this, this));   
+		screens.add(new MiddleScreen(this, this)); 
+		screens.add(new RightScreen(this, this));  
+		screens.add(new AmygSide(this, this)); 
        
         
     }
-    public void draw(){          
-        transition();            
-    }
-
+  
     
     public void drawTitleScreen(){
 		background(30); 
 		fill(100, 50, 80); 
-		rect(bX, bY, bW, bH, 40); 
+		rectMode(CENTER);
+		rect(width/2, height/2, 890, 200);
 		
 		fill(255);
-		textSize(height * 0.1f);
-		text("PROJECT NAME", width/2, height/2);
+		textSize(height * 0.07f);
+		text("Flight, Fight, and Thought", width/2, height/2);
 
 		
 		
 	}
 
-   public void transition(){
-    if(screen == 0){
-        drawTitleScreen();  
-    } else if(screen == 1){
-        project.draw();     
-    }
-}
+   
+	public void draw(){
+		if(screen == 0){
+			drawTitleScreen();
+		} else {
+			screens.get(screen - 1).display();
+		}
+	}
+	
+    public void setScreen(int s){
+    screen = s;
+	}
 
 
 
@@ -65,11 +72,12 @@ public class Brain extends PApplet {
         }
     }
 }
-
+	public void keyPressed(){
+    if(screen > 0){
+        screens.get(screen - 1).keyPressed();
+		}
+	}
 }
-//javac -cp ".:/Applications/Processing.app/Contents/Java/core/library/core.jar" Brain.java Project.java
-
+//javac -cp ".:/Applications/Processing.app/Contents/Java/core/library/core.jar" *.java
 //java -cp ".:/Applications/Processing.app/Contents/Java/core/library/core.jar" Brain
-
-
 

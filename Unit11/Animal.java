@@ -1,16 +1,16 @@
 
 public class Animal{
 
-public Animal(String name, int legCount, boolean furriness) {
+public Animal(String name, int legCount, boolean isFurry) {
 	
 	this.name = name; 
 	this.legCount = legCount; 
-	this.furriness = furriness; 
+	this.isFurry = isFurry; 
 }
 	
 	private String name; 
 	private int legCount; 
-	private boolean furriness; 
+	private boolean isFurry; 
 	
 	public String getName(){
 		return name; 
@@ -19,8 +19,8 @@ public Animal(String name, int legCount, boolean furriness) {
 		return legCount; 
 	}
 	
-	public boolean furriness(){
-		return furriness; 
+	public boolean isFurry(){
+		return isFurry; 
 	}
 
 	
