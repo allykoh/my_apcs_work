@@ -111,20 +111,17 @@ public class Initialization{
         System.out.println();
     }
     public static double[][] Random(){
-		
-		double[][] rando = new double[5][5]; 
-		double i = 10; 
-		double j = 1;
-		
-		for(i = 0; i < 5; i++)
-		for(j = 0; j < 5; j++)
-		result[i][j] = i+1; 
-		i = i+1; 
-		
-		j= j+1; 
-		i = 10*j;
-		
-	}
+    double[][] rando = new double[5][5]; 
+    double add = 10.0; 
+    for(int i = 0; i < 5; i++){
+        for(int j = 0; j < 5; j++){
+            rando[i][j] = add+(j+1); 
+        }
+        add+=10.0; 
+    }
+    
+    return rando; 
+}
 
 	
 	public static void main (String[] args){
