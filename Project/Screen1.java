@@ -28,6 +28,7 @@ public class Screen1 implements Screens {
 		x1 - size/2, y1,        
 		x1 + size/2, y1 - size/2,
 		x1 + size/2, y1 + size/2);
+		//p.text("insert image", p.width/4.0f, p.height/3.0f); 
 
 
 		float x2 = p.width/2.0f;
@@ -36,6 +37,7 @@ public class Screen1 implements Screens {
 		x2, y2 - size/2,        
 		x2 - size/2, y2 + size/2,
 		x2 + size/2, y2 + size/2);
+		//p.text("insert image", p.width/2.0f, p.height/3.0f); 
 
 
 		float x3 = (p.width*3)/4.0f;
@@ -44,18 +46,22 @@ public class Screen1 implements Screens {
 		x3 + size/2, y3,        
 		x3 - size/2, y3 - size/2,
 		x3 - size/2, y3 + size/2);	
+		//p.text("insert image", (p.width*3)/4.0f, p.height/3.0f); 
         
     }
 
-    public void keyPressed(){
-        if(p.keyCode == PApplet.LEFT){
-            brain.setScreen(2);
-        }
-        if(p.keyCode == PApplet.UP){
-            brain.setScreen(3);
-        }
-        if(p.keyCode == PApplet.RIGHT){
-            brain.setScreen(4);
-        }
+public void keyPressed(){
+
+    if(p.keyCode == PApplet.LEFT){
+        brain.setScreen(2); 
     }
+
+    if(p.keyCode == PApplet.UP){
+        brain.setScreen(3); 
+    }
+
+    if(p.keyCode == PApplet.RIGHT){
+        brain.setScreen(4); 
+    }
+}
 }

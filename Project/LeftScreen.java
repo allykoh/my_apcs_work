@@ -21,8 +21,8 @@ public class LeftScreen implements Screens {
         if(p.keyCode == PApplet.DOWN){
             brain.setScreen(1); 
         }
-        if(p.keyCode == PApplet.RIGHT){
-			brain.setScreen(5); 
+       if(p.keyCode == PApplet.RIGHT){
+    brain.setScreen(4); 
 		}
     }
 }
